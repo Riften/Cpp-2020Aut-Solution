@@ -23,7 +23,7 @@ author: Riften
 email: huangyongxi@sjtu.edu.cn
 description: >- # this means to ignore newlines until "baseurl:"
   程序设计思想与方法（C++）CS171 上机实验参考答案
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/Cpp-2020Aut-Solution" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: Riften
