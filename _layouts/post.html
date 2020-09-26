@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% if page.mathjax %}
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS" 
+      },
+      Macros: {
+        bm: ["{\\boldsymbol #1}", 1]
+      }
+    }
+  });
+</script>
+{% endif %}
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+<div class="post-content">
+{{content}}
+</div>
+
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}

@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "md5",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "windows": {
+                "command": "utils/venv/Scripts/python utils/md5.py ${file}"
+            },
+            "linux": {
+                "command": "utils/venv/bin/python utils/md5.py ${file}"
+            }
+        },
+        {
+            "label": "convert",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "windows": {
+                "command": "utils/venv/Scripts/python utils/convert_image.py ${file}"
+            },
+            "linux": {
+                "command": "utils/venv/bin/python utils/convert_image.py ${file}"
+            }
+        },
+        {
+            "label": "jekyll",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "bundle exec jekyll serve"
+        },
+        {
+            "label": "rsync",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "rsync -rltzDv --delete --chmod=a=rwx _site/ root@baitian.xyz:/var/www/blog/"
+        }
+    ]
+}
